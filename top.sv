@@ -79,11 +79,11 @@ module tb_top;
 	initial begin
 		clk = 1;
 		nreset = 1;
-		#(CLK_PERIOD * 2);
+		#(CLK_PERIOD * 10);
 		nreset = 0;
-		#(CLK_PERIOD * 2);
+		#(CLK_PERIOD * 10);
 		nreset = 1;
-		#(CLK_PERIOD*50);
+		#(CLK_PERIOD * 300);
 		$stop;
 	 end
 
