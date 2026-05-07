@@ -8,6 +8,7 @@ module control_unit (
 
     logic [1:0] cycle, next_cycle;
     logic [1:0] CO;
+
     assign CO = rInstr[15:14];
     assign selALU = rInstr[13:11];  // pasa directamente la operacion a la ALU
 
