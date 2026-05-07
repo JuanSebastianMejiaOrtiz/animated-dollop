@@ -2,8 +2,9 @@
  * This module is the TOP of the microarchitecture 
  */ 
 
-module top 	(input logic clk, nreset,
-				output logic [7:0] ndisp0, ndisp1);
+module top #(parameter CYCLES=50_000_000) (
+            input logic clk, nreset,
+            output logic [7:0] ndisp0, ndisp1);
 					
 	logic reset;
 	logic we, enA, enB, enOut, dataSrc;
