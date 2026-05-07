@@ -24,10 +24,11 @@ module romi (
         endcase
         */
         case (addr)
-            4'd0: data <= 16'h0000;
-            4'd1: data <= 16'h0081;
-            4'd2: data <= 16'h8204;
-            4'd3: data <= 16'h5B04;
+            4'd0:  data = 16'b0000_0000_0000_0000;
+            4'd1:  data = 16'b0000_0001_0000_0001;
+            4'd2:  data = 16'b0000_0010_0000_0010;
+            4'd3:  data = 16'b1000_0011_0000_1000;
+            4'd4:  data = 16'b0101_1010_0000_0100;
             default: data <= 16'h0000;
         endcase
     end

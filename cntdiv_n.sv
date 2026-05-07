@@ -25,7 +25,7 @@ module cntdiv_n #(TOPVALUE = 50_000_000) (clk, rst, clkout);
 	output logic clkout;
 	
 	// counter register 
-	localparam BITS = $clog2(TOPVALUE/2);
+    localparam BITS = (TOPVALUE > 2) ? $clog2(TOPVALUE/2) : 1;
 	logic [BITS - 1 : 0] rCounter;
 
 	// increment or reset the counter

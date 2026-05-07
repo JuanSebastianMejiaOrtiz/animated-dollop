@@ -61,6 +61,7 @@ module control_unit (
                     endcase
                 end
                 2'b11: begin  // instrucción de arranque
+                    enAI = 1'b1;
                     enRI = 1'b1;
                 end
                 // *No hace nada*
