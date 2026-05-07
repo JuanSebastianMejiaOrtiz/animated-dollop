@@ -56,11 +56,15 @@ module control_unit (
                         2'b00: begin enA = 1'b1; enB = 1'b1; end
                         2'b01: begin enOut = 1'b1; end
                         2'b10: begin we = 1'b1; enRI = 1'b1; enAI = 1'b1; end
+                        // *No hace nada*
+                        default: begin end
                     endcase
                 end
                 2'b11: begin  // instrucción de arranque
                     enRI = 1'b1;
                 end
+                // *No hace nada*
+                default: begin end
             endcase
         end
     end

@@ -3,6 +3,7 @@ module romi (
     output logic [15:0] data
 );
     always_comb begin
+        /*
         case(addr)
             4'd0:  data = 16'b0000_0000_0000_0000;
             4'd1:  data = 16'b0000_0000_0000_0000;
@@ -20,6 +21,14 @@ module romi (
             4'd13: data = 16'b0000_0000_0000_0000;
             4'd14: data = 16'b0000_0000_0000_0000;
             4'd15: data = 16'b0000_0000_0000_0000;
+        endcase
+        */
+        case (addr)
+            4'd0: data <= 16'h0000;
+            4'd1: data <= 16'h0081;
+            4'd2: data <= 16'h8204;
+            4'd3: data <= 16'h5B04;
+            default: data <= 16'h0000;
         endcase
     end
 endmodule

@@ -1,0 +1,12 @@
+Deco.sv
+alu.sv
+datapath.sv
+flipflop.sv
+instr_mem.sv
+mux2.sv
+regfile.sv
+romd.sv
+romi.sv
+top.sv
+cntdiv_n.sv
+control_unit.sv
