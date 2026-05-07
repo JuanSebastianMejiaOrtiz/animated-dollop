@@ -5,12 +5,12 @@ module instr_mem (
     logic [3:0] addInstr, addNextInstr;
     logic [15:0] Instr;
 
-    flipflop #(.WIDTH(4)) ffAddressInstr (
+    flipflop #(.WIDTH(4)) ffAddressInstr1 (
         .clk(clk), .reset(reset), .en(enAI),
         .d(addNextInstr), .q(addInstr)
     );
 
-    flipflop #(.WIDTH(4)) ffAddressInstr (
+    flipflop #(.WIDTH(4)) ffAddressInstr2 (
         .clk(clk), .reset(reset), .en(enRI),
         .d(Instr), .q(rInstr)
     );

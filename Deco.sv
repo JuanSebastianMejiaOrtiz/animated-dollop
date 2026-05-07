@@ -1,5 +1,5 @@
 // Pone todo en decimal con signo
-module modulo_dec (
+module Deco (
     input  logic [3:0] S,   
     output logic [7:0] DISP0,    
     output logic [7:0] DISP1     

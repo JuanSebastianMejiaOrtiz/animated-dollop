@@ -47,7 +47,7 @@ module top #(parameter CYCLES=50_000_000) (
 
     // Storing rC value
     flipflop #(.WIDTH(4)) rC_storage (
-        .clk(clk), .reset(reset), .en(we), .d(rC), .q(dec)
+        .clk(clkdiv), .reset(reset), .en(we), .d(rC), .q(dec)
     );
 
    // Decoder for 7-Seg Screen unit instantiation
@@ -66,21 +66,22 @@ endmodule
 
 module tb_top;
 	localparam CLK_PERIOD = 20ns;
+    localparam CYCLES = 4;
 
    logic clk;
    logic nreset;
    logic [7:0] ndisp0, ndisp1;
 
    // Instancia del TOP
-   top top_inst (clk, nreset, ndisp0, ndisp1);
+   top #(.CYCLES(CYCLES)) top_inst (clk, nreset, ndisp0, ndisp1);
 	always #(CLK_PERIOD / 2) clk = ~clk;
 	 
 	initial begin
 		clk = 1;
 		nreset = 1;
-		#(CLK_PERIOD);
+		#(CLK_PERIOD * 2);
 		nreset = 0;
-		#(CLK_PERIOD);
+		#(CLK_PERIOD * 2);
 		nreset = 1;
 		#(CLK_PERIOD*50);
 		$stop;
